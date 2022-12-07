@@ -44,13 +44,23 @@ class FolderManager:
         envFileLoc = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('METADATA').joinpath('.env')
         ENV_VAR_DICT = dotenv_values(envFileLoc)
 
-        print(CURR_DIR)
         TAG_LIST_TEMP = [key for key, val in ENV_VAR_DICT.items() if val.strip()=='tag']
-        TAG_SET_TEMP = set(TAG_LIST_TEMP) - {'All'}
-        for tagName in TAG_SET_TEMP:
+        for tagName in TAG_LIST_TEMP:
             for fileLoc in CURR_DIR.joinpath(tagName).glob("*"):
                 os.remove(fileLoc)
         
+        self.recoverBackUpFiles()
+    
+    def recoverBackUpFiles(self) -> None:
+        """
+        This file will be used independently, and not during deployment
+        """
+        backUpDirLoc = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('DATABASE').joinpath('BACKUP_FILES')
+        destinationDirLoc = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('QueueProblemFiles')
+        for fileLoc in backUpDirLoc.glob('*'):
+            fileName = fileLoc.name
+            destinatin = destinationDirLoc.joinpath(fileName)
+            shutil.copy(fileLoc, destinationDirLoc)
 
 
 

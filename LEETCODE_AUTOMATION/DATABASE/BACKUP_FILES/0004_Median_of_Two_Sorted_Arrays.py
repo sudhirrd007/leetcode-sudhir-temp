@@ -4,7 +4,7 @@
 # DIFFICULTY = hard
 # LANGUAGE = python
 # TAGS = Array, Binary_Search, Divide_and_Conquer
-# LEETCODELINK = https://leetcode.com/problems/two-sum/
+# LEETCODELINK = https://leetcode.com/problems/median-of-two-sorted-arrays/
 # ACCEPTANCERATE = 35.4%
 # NOTES = 
 # END-SRD = 
