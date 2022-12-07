@@ -22,16 +22,20 @@ class FolderManager:
         for dirName in dirNameList:
             destination = CURR_DIR.joinpath(dirName).joinpath(fileName)
             shutil.copy(fileLoc, destination)
+            print(f'>>> + {fileName} -> {dirName}')
         # copy to "All" directory
         destination = CURR_DIR.joinpath('All').joinpath(fileName)
         shutil.copy(fileLoc, destination)
+        print(f'>>> + {fileName} -> All')
         self.deleteFile(fileLoc)
     
     def deleteFile(self, fileLoc):
         fileName = fileLoc.name
         destination = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('DATABASE').joinpath('BACKUP_FILES').joinpath(fileName)
         shutil.copy(fileLoc, destination)
+        print(f'>>> + {fileName} -> BACKUP_FILES')
         os.remove(fileLoc)
+        print(f'>>> - {fileName}')
 
     def deleteAllFiles(self) -> None:
         """

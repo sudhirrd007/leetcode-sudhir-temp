@@ -51,6 +51,6 @@ class SQLiteManager:
         try:
             self.cursor.execute(query)
             self.conn.commit()
-            print(f'\n >>> Inserted into master table Successfully')
+            print(f'\n >>> Inserted into master table Successfully - {ATTRIBUTE_DICT["NUMBER"]}')
         except:
-            print(f'\n>>> Error in insering (Duplicate Record)')
+            print(f'\n>>> Error in insering (Duplicate Record) - {ATTRIBUTE_DICT["NUMBER"]}')

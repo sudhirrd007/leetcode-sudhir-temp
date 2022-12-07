@@ -49,7 +49,6 @@ for fileLoc in queueProblemFilesLoc.glob('*.py'):
     sqliteObj.insertIntoMasterTable(ATTRIBUTE_DICT)
 
     tagsList = [tag.strip() for tag in ATTRIBUTE_DICT['TAGS'].split(',')]
-    
     folderManagerObj.copyToDirs(fileLoc, tagsList)
 
 sqliteObj.conn.close()
