@@ -44,7 +44,6 @@ for fileLoc in queueProblemFilesLoc.glob('*.py'):
 
 
 
-
 sqliteObj.conn.close()
 
 # Load the SQLite DB file from the local file system
