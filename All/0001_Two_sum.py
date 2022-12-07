@@ -3,7 +3,7 @@
 # FILENAME = 0001_Two_sum.py
 # DIFFICULTY = easy
 # LANGUAGE = python
-# TAGS = ARRAY, HASHTABLE
+# TAGS = Array, Hash_Table
 # LEETCODELINK = https://leetcode.com/problems/two-sum/
 # ACCEPTANCERATE = 49.1%
 # NOTES = 

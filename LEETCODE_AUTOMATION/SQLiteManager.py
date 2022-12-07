@@ -48,6 +48,9 @@ class SQLiteManager:
         query = f'INSERT INTO {self.masterTableName} (' + (", ".join(attributes)) + \
         ') VALUES (' + (", ".join(values)) + ')'
 
-        self.cursor.execute(query)
-        self.conn.commit()
-        print(f'\n >>> Inserted into master table Successfully')
+        try:
+            self.cursor.execute(query)
+            self.conn.commit()
+            print(f'\n >>> Inserted into master table Successfully')
+        except:
+            print(f'\n>>> Error in insering (Duplicate Record)')
