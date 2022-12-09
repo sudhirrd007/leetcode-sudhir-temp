@@ -30,7 +30,7 @@ class ReadMeGenerator:
                 if(tag[0].lower() == alphabet):
                     # folderName = self.dataDict[tag]['folderName']
                     title = tag
-                    TEMP_INDEX_STRING += f'[{title}](#{title}) <br> \n'
+                    TEMP_INDEX_STRING += f'[{title}](#{title.lower()}) <br> \n'
             if(TEMP_INDEX_STRING):
                 INDEX_STRING += f'{alphabet.upper()} <br> \n{TEMP_INDEX_STRING} \n'
         INDEX_STRING += '<hr> \n\n'
@@ -74,7 +74,7 @@ class ReadMeGenerator:
             CONTENT_STRING += " | " + "[Redirect](" + rowDict['LEETCODELINK'] + ")"
             CONTENT_STRING += " | " + str(rowDict['NOTES']) + "|\n"
 
-        CONTENT_STRING += CONTENT_STRING + "\n[:arrow_up: Back to index](#index) <br> \n\n"
+        CONTENT_STRING += "\n[:arrow_up: Back to index](#index) <br><br> \n\n"
         return CONTENT_STRING
 
 
