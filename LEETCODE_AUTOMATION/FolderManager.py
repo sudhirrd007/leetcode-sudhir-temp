@@ -57,7 +57,7 @@ class FolderManager:
         """
         backUpDirLoc = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('DATABASE').joinpath('BACKUP_FILES')
         destinationDirLoc = CURR_DIR.joinpath('LEETCODE_AUTOMATION').joinpath('QueueProblemFiles')
-        for fileLoc in backUpDirLoc.glob('*'):
+        for fileLoc in backUpDirLoc.glob('*.py'):
             fileName = fileLoc.name
             destinatin = destinationDirLoc.joinpath(fileName)
             shutil.copy(fileLoc, destinationDirLoc)

@@ -106,11 +106,7 @@ class ReadMeGenerator:
         STRING += self.indexString()
         STRING += self.tableString()
 
-        print(STRING)
         with open(readMeLoc, 'w') as readMeFile:
             readMeFile.write(STRING)
-
-if __name__ == '__main__':
-    obj = ReadMeGenerator()
-    obj.updateReadMeFile()
-
+        
+        print("\n>>> README.md file updated")

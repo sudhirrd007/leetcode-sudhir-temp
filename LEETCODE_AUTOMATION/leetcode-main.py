@@ -10,6 +10,7 @@ import pandas as pd
 from SQLiteManager import SQLiteManager
 from Problem import Problem
 from FolderManager import FolderManager
+from ReadMeGenerator import ReadMeGenerator
 
 CURR_DIR = Path(os.getcwd())
 ALL_DIR = CURR_DIR.parent.joinpath('All')
@@ -53,4 +54,5 @@ for fileLoc in queueProblemFilesLoc.glob('*.py'):
 
 sqliteObj.closeConnection()
 
-# raise Exception('Sudhir Stopped the program')
+obj = ReadMeGenerator()
+obj.updateReadMeFile()
