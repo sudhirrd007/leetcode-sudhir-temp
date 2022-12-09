@@ -1,0 +1,2 @@
+|  #  | Title  |   Difficulty  |    Language   | Acceptance rate | LeetCode Link | Notes |
+|-----|------- |  ------------ | ------------- | --------------- | ------------- | ----- |

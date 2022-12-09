@@ -1,6 +1,7 @@
 import sqlite3
 from pathlib import Path
 import os
+import pandas as pd
 
 class SQLiteManager:
     def __init__(self, dataBaseLoc):
@@ -21,6 +22,13 @@ class SQLiteManager:
     def checkMasterTable(self):
         flag = self.cursor.execute(f'SELECT name FROM sqlite_master WHERE type="table" AND name="{self.masterTableName}"')
         return True if flag.fetchall() else False
+
+    def fetchAllRecords(self) -> pd.DataFrame:
+        df = pd.read_sql_query("SELECT * from Problems ORDER BY NUMBER ASC", self.conn)
+        return df
+
+    def closeConnection(self):
+        self.conn.close()
 
     def createMasterTable(self):
         self.cursor.execute("CREATE TABLE IF NOT EXISTS Problems (NUMBER INTEGER PRIMARY KEY, \

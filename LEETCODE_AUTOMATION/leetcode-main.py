@@ -42,7 +42,6 @@ folderManagerObj.checkAllDirectory()
 # > insert all the attributes of files in SQLite dataBase
 for fileLoc in queueProblemFilesLoc.glob('*.py'):
 
-
     problemObj = Problem(fileLoc, ATTRIBUTE_LIST)
     ATTRIBUTE_DICT = problemObj.ATTRIBUTE_DICT
 
@@ -51,7 +50,7 @@ for fileLoc in queueProblemFilesLoc.glob('*.py'):
     tagsList = [tag.strip() for tag in ATTRIBUTE_DICT['TAGS'].split(',')]
     folderManagerObj.copyToDirs(fileLoc, tagsList)
 
-sqliteObj.conn.close()
+
+sqliteObj.closeConnection()
 
 # raise Exception('Sudhir Stopped the program')
-
